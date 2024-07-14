@@ -603,6 +603,7 @@ header {
     margin-bottom: 16px;
     text-align: center;
     color: #2E2F42;
+    font-weight: 500;
 }
 
 .modal-form {
