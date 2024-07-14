@@ -108,7 +108,7 @@ body {
 }
 
 .btn {
-    border: 0;
+    border: none;
     background-color: var(--primary-brand-cl);
     cursor: pointer;
     border-radius: 4px;
@@ -483,7 +483,7 @@ header {
     background-color: #31D0AA;
 }
 
-.input-btn-area {
+.subscribe-block {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -491,12 +491,17 @@ header {
 }
 
 .footer-email-input {
-    width: 263px;
+    display: block;
+    width: 264px;
     height: 40px;
     border-radius: 4px;
-    border: 1px solid var(--light-text-cl);
-    padding: 0 16px;
-    background-color: var(--dark-cl);
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding-left: 16px;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.02em;
+    background-color: transparent;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -505,15 +510,21 @@ header {
 }
 
 .footer-sbs-btn {
-    display: inline-flex;
-    max-width: 164px;
-    padding: 8px 24px;
+    display: flex;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    min-width: 165px;
+    height: 40px;
+    padding: 8px 24px;
+    color: #ffffff;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    cursor: pointer;
 }
 
 .email-icon {
     fill: var(--light-text-cl);
+    margin-left: 16px;
 }
 
 /*endregion Footer*/
@@ -524,11 +535,8 @@ header {
     inset: 0;
     background-color: rgba(46, 47, 66, 0.4);
     z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: var(--transition);
-    transition-property: opacity, visibility ;
+    transition-property: opacity, visibility;
 
     opacity: 0;
     pointer-events: none;
@@ -542,19 +550,27 @@ header {
 }
 
 .modal {
+    position: absolute;
     border-radius: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 408px;
     min-height: 584px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background: var(--bg-modal);
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
     display: flex;
+    transition: var(--transition);
 
     flex-direction: column;
     align-items: center;
 }
 
 .close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
     align-self: end;
     display: flex;
     align-items: center;
@@ -566,7 +582,7 @@ header {
     background-color: var(--cornflower-cl);
     cursor: pointer;
     margin-bottom: 24px;
-    transition: background-color var(--transition), border-color var(--transition);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .close-icon {
@@ -578,13 +594,15 @@ header {
     fill: var(--light-text-cl);
 }
 
-.close-btn:hover, .close-btn.active {
+.close-btn:hover, .close-btn.active, .close-btn:focus {
     background-color: var(--pressed-cl);
-    border-color: var(--pressed-cl);
+    border: none;
 }
 
 .modal-caption {
     margin-bottom: 16px;
+    text-align: center;
+    color: #2E2F42;
 }
 
 .modal-form {
@@ -617,7 +635,9 @@ header {
 
 .modal-icon {
     position: absolute;
-    top: 8px;
+    top: 50%;
+
+    transform: translateY(-50%);
     left: 16px;
     fill: var(--dark-cl);
     transition: fill var(--transition);
@@ -633,6 +653,7 @@ header {
     transition: var(--transition);
     transition-property: border-color;
     outline: transparent;
+    background-color: transparent;
 }
 
 .modal-input:focus + .modal-icon {
@@ -644,10 +665,14 @@ header {
 }
 
 .modal-textarea {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
     display: block;
     height: 120px;
     padding: 8px 16px;
     resize: none;
+    background-color: transparent;
 }
 
 .modal-textarea::placeholder {
@@ -672,16 +697,14 @@ header {
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     margin-right: 8px;
-    fill: none;
-    transition: var(--transition);
-    transition-property: border-color, background-color, fill;
-
+    fill: transparent
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .input-checkbox:checked + .modal-label > .modal-check-box {
-    border-color: var(--pressed-cl);
     background-color: var(--pressed-cl);
-    fill: var(--light-cl)
+    fill: #ffffff;
+    border: none;
 }
 
 .privacy-link {
