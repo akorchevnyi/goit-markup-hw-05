@@ -561,7 +561,7 @@ header {
     background: var(--bg-modal);
     padding: 72px 24px 24px 24px;
     display: flex;
-    transition: transform 250ms var(--transition);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     flex-direction: column;
     align-items: center;
@@ -674,6 +674,7 @@ header {
     padding: 8px 16px;
     resize: none;
     background-color: transparent;
+    line-height: 1.17
 }
 
 .modal-textarea::placeholder {
@@ -704,7 +705,7 @@ header {
 
 .input-checkbox:checked + .modal-label > .modal-check-box {
     background-color: var(--pressed-cl);
-    fill: #ffffff;
+    fill: var(--light-cl);
     border: none;
 }
 
